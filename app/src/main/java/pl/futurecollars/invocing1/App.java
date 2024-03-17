@@ -4,6 +4,8 @@
 
 package pl.futurecollars.invocing1;
 
+import pl.futurecollars.invocing1.model.Invoice;
+
 public class App {
 
   public String getGreeting() {
