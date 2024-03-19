@@ -42,9 +42,8 @@ public class InMemoryDatabase implements Database {
   }
 
   @Override
-  public void detete(int id) {
+  public void delete(int id) {
     invoices.remove(id);
   }
-
 
 }

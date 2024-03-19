@@ -5,7 +5,6 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-
 public class Invoice {
 
   private int id;

@@ -3,15 +3,23 @@ package pl.futurecollars.invocing1.db.memory
 import pl.futurecollars.invocing1.db.Database
 import pl.futurecollars.invocing1.model.Invoice
 import spock.lang.Specification
+import static pl.futurecollars.invocing1.TestHelpers.invoice
+
 
 class InMemoryDatabaseTest extends Specification {
 
     //setUp -> new InMemoryDatabse();
+    private Database database
+
+    def setup(){
+        database = new InMemoryDatabase()
+    }
+
 
     def "Save"() {
         given:
             Database database = new InMemoryDatabase()
-            Invoice invoice = new Invoice()
+            Invoice invoice = invoice(1)
 
         when:
             int id = database.save(invoice)
@@ -22,8 +30,8 @@ class InMemoryDatabaseTest extends Specification {
 
     def "getById should return correct invoice"() {
         given:
-        Invoice invoice1 = new Invoice(id: 1,)
-        Invoice invoice2 = new Invoice(id: 2,)
+        Invoice invoice1 = invoice(1)
+        Invoice invoice2 = invoice(2)
         database.save(invoice1)
         database.save(invoice2)
 
@@ -37,8 +45,8 @@ class InMemoryDatabaseTest extends Specification {
 
     def "getAll should return all invoices"() {
         given:
-        Invoice invoice1 = new Invoice(id: 1,)
-        Invoice invoice2 = new Invoice(id: 2,)
+        Invoice invoice1 = invoice(1)
+        Invoice invoice2 = invoice(2)
         database.save(invoice1)
         database.save(invoice2)
 
@@ -52,9 +60,9 @@ class InMemoryDatabaseTest extends Specification {
 
     def "update should modify existing invoice"() {
         given:
-        Invoice originalInvoice = new Invoice(id: 1,)
+        Invoice originalInvoice = invoice(1)
         database.save(originalInvoice)
-        Invoice updatedInvoice = new Invoice(id: 1,)
+        Invoice updatedInvoice = invoice(2)
 
         when:
         database.update(1, updatedInvoice)
@@ -65,7 +73,7 @@ class InMemoryDatabaseTest extends Specification {
 
     def "delete should remove invoice from database"() {
         given:
-        Invoice invoice = new Invoice(id: 1,)
+        Invoice invoice = invoice(1)
         database.save(invoice)
 
         when:

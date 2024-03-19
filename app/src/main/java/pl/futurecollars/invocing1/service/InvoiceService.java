@@ -23,9 +23,11 @@ public class InvoiceService {
 
     return database.getAll();
   }
-  private  void update(int id, Invoice updateInvoice){
+  private void update(int id, Invoice updateInvoice){
+    database.update(id, updateInvoice);
   }
   private void delete(int id){
+   database.delete(id);
   }
 
 }
