@@ -10,7 +10,7 @@ public interface Database {
 
   Optional<Invoice> getById(int id);
   List<Invoice> getAll();
-  void uodate(int id, Invoice updateInvoice);
+  void update(int id, Invoice updateInvoice);
   void detete(int id);
 
 }

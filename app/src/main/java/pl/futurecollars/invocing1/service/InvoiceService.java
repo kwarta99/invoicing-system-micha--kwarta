@@ -8,27 +8,24 @@ import pl.futurecollars.invocing1.model.Invoice;
 public class InvoiceService {
 
   private final Database database;
-
-
   public InvoiceService(Database database) {
-    database = database;
+    this.database = database;
   }
 
   public int save(Invoice invoice){
   return database.save(invoice);
   }
-
   public  Optional<Invoice> getById(int id){
-  return database.getById(id);
+
+    return database.getById(id);
   }
   public List<Invoice> getAll(){
-  return database.getAll();
-  }
-  private  void uodate(int id, Invoice updateInvoice){
 
+    return database.getAll();
   }
-  private void detete(int id){
-
+  private  void update(int id, Invoice updateInvoice){
+  }
+  private void delete(int id){
   }
 
 }

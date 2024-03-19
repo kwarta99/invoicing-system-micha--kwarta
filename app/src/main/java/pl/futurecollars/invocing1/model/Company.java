@@ -5,13 +5,13 @@ import lombok.Data;
 @Data
 
 public class Company {
- private String taxIdentifications;
- private String adress;
- private String name;
+  private String taxIdentifications;
+  private String adress;
+  private String name;
 
- public Company(String taxIdentifications, String adress, String name) {
-  this.taxIdentifications = taxIdentifications;
-  this.adress = adress;
-  this.name = name;
- }
+  public Company(String taxIdentifications, String adress, String name) {
+    this.taxIdentifications = taxIdentifications;
+    this.adress = adress;
+    this.name = name;
+  }
 }
