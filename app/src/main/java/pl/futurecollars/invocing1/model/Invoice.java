@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class Invoice {
 
-  private int id;
+  private Integer id;
   private LocalDate date;
   private Company buyer;
   private Company seller;
@@ -20,3 +20,4 @@ public class Invoice {
     this.entries = entries;
   }
 }
+
