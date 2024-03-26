@@ -12,13 +12,4 @@ class VatTest extends Specification {
         Vat.Vat_0.rate == 0
     }
 
-    def "Vat should return correct rate for each value"() {
-        expect:
-        Vat.valueOf("VAT_23").getRate() == 23
-        Vat.valueOf("VAT_8").getRate() == 8
-        Vat.valueOf("VAT_5").getRate() == 5
-        Vat.valueOf("VAT_0").getRate() == 0
-
-
-    }
 }

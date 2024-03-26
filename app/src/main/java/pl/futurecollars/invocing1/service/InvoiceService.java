@@ -10,33 +10,26 @@ public class InvoiceService {
   private final Database database;
 
   public InvoiceService(Database database) {
-
     this.database = database;
   }
 
-  public int save(Invoice invoice) {
-
+  public int saveInvoice(Invoice invoice) {
     return database.save(invoice);
   }
 
-  public Optional<Invoice> getById(int id) {
-
-    return database.getById(id);
-  }
-
-  public List<Invoice> getAll() {
-
+  public List<Invoice> getAllInvoices() {
     return database.getAll();
   }
 
-  private void update(int id, Invoice updateInvoice) {
-
-    database.update(id, updateInvoice);
+  public Optional<Invoice> getInvoiceById(int id) {
+    return database.getById(id);
   }
 
-  private void delete(int id) {
-
-    database.delete(id);
+  public Invoice updateInvoice(int id, Invoice updatedInvoice) {
+    return database.update(id, updatedInvoice);
   }
 
+  public boolean deleteInvoice(int id) {
+    return database.delete(id);
+  }
 }

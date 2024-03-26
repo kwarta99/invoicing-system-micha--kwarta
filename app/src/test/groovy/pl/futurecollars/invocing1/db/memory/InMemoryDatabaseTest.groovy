@@ -5,10 +5,9 @@ import pl.futurecollars.invocing1.model.Invoice
 import spock.lang.Specification
 import static pl.futurecollars.invocing1.TestHelpers.invoice
 
-
 class InMemoryDatabaseTest extends Specification {
 
-    //setUp -> new InMemoryDatabse();
+    //setUp -> new InMemoryDatabase();
     private Database database
 
     def setup(){
@@ -81,5 +80,14 @@ class InMemoryDatabaseTest extends Specification {
 
         then:
         assert database.getAll().isEmpty()
+    }
+    def "updating not existing invoice throws exception"() {
+        when:
+        Invoice notPresentInDatabaseInvoice = invoice(1)
+        database.update(213, notPresentInDatabaseInvoice)
+
+        then:
+        def ex = thrown(IllegalArgumentException)
+        ex.message == "Id 213 does not exist"
     }
 }

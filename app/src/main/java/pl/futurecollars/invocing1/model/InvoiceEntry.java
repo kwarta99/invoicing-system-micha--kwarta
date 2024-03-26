@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class InvoiceEntry {
 
-  String description;
+  public String description;
   BigDecimal price;
   BigDecimal vatValue;
   Vat vatRate;
