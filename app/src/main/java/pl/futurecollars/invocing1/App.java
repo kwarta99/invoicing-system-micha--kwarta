@@ -3,6 +3,7 @@ package pl.futurecollars.invocing1;
 import pl.futurecollars.invocing1.model.Company;
 
 public class App {
+
   public String getGreeting() {
     return "Hello World!";
   }
