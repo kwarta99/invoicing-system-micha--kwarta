@@ -26,11 +26,11 @@ public class InvoiceService {
   }
 
   public void updateInvoice(int id, Invoice updatedInvoice) {
-     database.update(id, updatedInvoice);
+    database.update(id, updatedInvoice);
   }
 
   public void deleteInvoice(int id) {
-     database.delete(id);
+    database.delete(id);
   }
 
 }
