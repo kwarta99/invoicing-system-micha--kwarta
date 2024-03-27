@@ -27,9 +27,10 @@ class IntegratedSystemTest extends Specification{
 
         when: "Invoice is updated"
         readInvoice.entries[0].description = "Updated service"
-        Invoice updatedInvoice = service.updateInvoice(readInvoice.id, readInvoice)
+        service.updateInvoice(readInvoice.id, readInvoice)
+        Invoice updatedInvoice = service.getInvoiceById(readInvoice.id).get()
 
-        then: "Updated invoice has the updated description"
+                then: "Updated invoice has the updated description"
         assert updatedInvoice.entries[0].description == "Updated service"
 
         when: "Invoice is deleted"
